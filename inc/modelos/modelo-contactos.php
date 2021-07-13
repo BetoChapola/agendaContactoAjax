@@ -45,7 +45,7 @@ if (isset($_POST['accion'])) {
 
     if ($_POST['accion'] == 'editar') {
         require_once('../funciones/bd.php');
-        echo json_encode($_POST);
+        // echo json_encode($_POST);
 
         $nombre = filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
         $empresa = filter_var($_POST['empresa'], FILTER_SANITIZE_STRING);

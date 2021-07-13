@@ -3,18 +3,18 @@ include 'inc/funciones/funciones.php';
 include 'inc/layout/header.php';
 // Cuando mandamos id desde el index, el id viene como string, debemos convertirlo en entero:
 $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
+
+var_dump($id);
+
 if (!$id) {
     die('No es un valor valido.');
 }
-
 // Recuerda que estas variabes siguen vivas en el formulario, ya que son parte añadida de la misma
 // pagina desde otro archivo:  <?php include 'inc/layout/formulario.php'
 $resultado = obtenerContacto($id);
 $contacto = $resultado->fetch_assoc();
 ?>
-<pre>
-    <?php var_dump($contacto) ?>
-</pre>
+
 <div class="contenedor-barra">
     <div class="contenedor barra">
         <a href="index.php" class="btn volver">Volver</a>
